@@ -3,7 +3,7 @@ work_dir: ./work_dir/ntu60/xview/STJM_T64_mixup_Separable_order1_adp/joint_joint
 # feeder
 feeder: feeders.feeder_ntu.Feeder
 train_feeder_args:
-  data_path: data/ntu120/NTU120_CSet.npz
+  data_path: data/ntu120/NTU120_CSub.npz
   split: train
   debug: False
   random_choose: True
@@ -13,11 +13,11 @@ train_feeder_args:
   normalization: False
   random_rot: True
   p_interval: [0.5, 1]
-  vel: True
+  vel: False
   bone: False
 
 test_feeder_args:
-  data_path: data/ntu120/NTU120_CSet.npz
+  data_path: data/ntu120/NTU120_CSub.npz
   split: test
   window_size: 64
   p_interval: [0.95]

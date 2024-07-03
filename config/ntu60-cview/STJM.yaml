@@ -1,9 +1,9 @@
-work_dir: ./work_dir/ntu60/xsub/stjmNet_fac_relu/joint
+work_dir:
 
 # feeder
 feeder: feeders.feeder_ntu.Feeder
 train_feeder_args:
-  data_path: data/ntu/NTU60_CS.npz
+  data_path: data/ntu/NTU60_CV.npz
   split: train
   debug: False
   random_choose: True
@@ -17,7 +17,7 @@ train_feeder_args:
   bone: False
 
 test_feeder_args:
-  data_path: data/ntu/NTU60_CS.npz
+  data_path: data/ntu/NTU60_CV.npz
   split: test
   window_size: 64
   p_interval: [0.95]
@@ -26,7 +26,7 @@ test_feeder_args:
   bone: False
 
 # model
-using_mixup: False
+using_mixup: True
 model: model.model.Model
 manifoldMixModel: model.mixupModel.ManifoldMixupModel
 model_args:
@@ -37,7 +37,7 @@ model_args:
   graph: graph.ntu_rgb_d.Graph
   graph_args:
     mode: 'Partitioning'
-    K: 1
+    K: 2
 
 #optim
 weight_decay: 0.0004
